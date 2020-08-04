@@ -20,8 +20,6 @@ log
 *.iws
 *.iml
 *.ipr
-/.mvn/wrapper/maven-wrapper.jar
-/.mvn/wrapper/maven-wrapper.properties
-/.mvn/wrapper/MavenWrapperDownloader.java
+/.mvn/
 /mvnw
 /mvnw.cmd
