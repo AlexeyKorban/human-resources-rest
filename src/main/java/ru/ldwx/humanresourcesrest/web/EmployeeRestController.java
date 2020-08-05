@@ -50,10 +50,10 @@ public class EmployeeRestController {
 
     @GetMapping(value = REST_URL + "/filter")
     public List<Employee> getBetween(
-            @RequestParam(value = "startDate", required = false) LocalDate startDate,
-            @RequestParam(value = "endDate", required = false) LocalDate endDate) {
-        startDate = startDate == null ? LocalDate.MIN : startDate;
-        endDate = endDate == null ? LocalDate.MAX : endDate;
-        return service.getBetweenDates(startDate, endDate);
+            @RequestParam(value = "startDate", required = false) String startDate,
+            @RequestParam(value = "endDate", required = false) String endDate) {
+        LocalDate start = startDate == null ? LocalDate.MIN : LocalDate.parse(startDate);
+        LocalDate end = endDate == null ? LocalDate.MAX : LocalDate.parse(endDate);
+        return service.getBetweenDates(start, end);
     }
 }
