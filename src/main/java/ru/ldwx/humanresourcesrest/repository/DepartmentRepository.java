@@ -6,4 +6,5 @@ import ru.ldwx.humanresourcesrest.model.Department;
 
 @Controller
 public interface DepartmentRepository extends CrudRepository<Department, Integer> {
+    Department findByName(String name);
 }

@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.ldwx.humanresourcesrest.model.Department;
+import ru.ldwx.humanresourcesrest.model.Employee;
 import ru.ldwx.humanresourcesrest.service.DepartmentService;
 
 import java.util.List;
@@ -35,5 +36,10 @@ public class DepartmentRestController {
     @GetMapping(value = REST_URL)
     public List<Department> getAll() {
         return service.getAll();
+    }
+
+    @GetMapping(value = REST_URL + "/{name}")
+    public Department get(@PathVariable("name") String name) {
+        return service.get(name);
     }
 }

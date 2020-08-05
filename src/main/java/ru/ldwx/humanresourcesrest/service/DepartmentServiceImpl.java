@@ -33,4 +33,9 @@ public class DepartmentServiceImpl implements DepartmentService {
         return StreamSupport.stream(repository.findAll().spliterator(), false)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public Department get(String name) {
+        return repository.findByName(name);
+    }
 }
