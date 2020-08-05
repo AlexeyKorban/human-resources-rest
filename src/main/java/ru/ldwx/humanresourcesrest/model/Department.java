@@ -4,12 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Department {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "seq", sequenceName = "seq", initialValue = 100)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "seq")
     private Integer id;
     private String name;
 

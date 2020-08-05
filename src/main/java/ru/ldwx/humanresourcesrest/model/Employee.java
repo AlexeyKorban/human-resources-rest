@@ -1,6 +1,11 @@
 package ru.ldwx.humanresourcesrest.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -8,7 +13,8 @@ import java.time.LocalDate;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "seq", sequenceName = "seq", initialValue = 100)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "seq")
     private Integer id;
     private String fullName;
     private LocalDate dateOfBirth;

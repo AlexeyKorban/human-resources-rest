@@ -2,8 +2,6 @@ package ru.ldwx.humanresourcesrest.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.ldwx.humanresourcesrest.model.Employee;
@@ -34,7 +32,7 @@ public class EmployeeRestController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PostMapping(value =  REST_URL, consumes = "application/json")
+    @PostMapping(value = REST_URL, consumes = "application/json")
     public ResponseEntity<Employee> update(@RequestBody Employee employee) {
         service.update(employee);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -45,7 +43,7 @@ public class EmployeeRestController {
         service.delete(id);
     }
 
-    @GetMapping (value = REST_URL)
+    @GetMapping(value = REST_URL)
     public List<Employee> getAll() {
         return service.getAll();
     }

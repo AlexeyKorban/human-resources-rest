@@ -29,11 +29,6 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public void update(Department department) {
-        repository.save(department);
-    }
-
-    @Override
     public List<Department> getAll() {
         return StreamSupport.stream(repository.findAll().spliterator(), false)
                 .collect(Collectors.toList());

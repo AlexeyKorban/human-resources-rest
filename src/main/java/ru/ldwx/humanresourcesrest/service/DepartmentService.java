@@ -9,7 +9,5 @@ public interface DepartmentService {
 
     void delete(int id);
 
-    void update(Department department);
-
     List<Department> getAll();
 }
