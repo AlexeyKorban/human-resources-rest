@@ -1,3 +1,6 @@
+DELETE FROM EMPLOYEE;
+DELETE FROM DEPARTMENT;
+
 INSERT INTO DEPARTMENT (id, name)
 VALUES (1, 'Департамент информационных технологий'),
        (2, 'Департамент персонала'),
