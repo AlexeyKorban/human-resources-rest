@@ -2,6 +2,7 @@ package ru.ldwx.humanresourcesrest.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlConfig;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
@@ -16,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static ru.ldwx.humanresourcesrest.DepartmentTestData.DEPARTMENT_1;
 import static ru.ldwx.humanresourcesrest.EmployeeTestData.*;
 
-@SpringJUnitConfig(HumanResourcesRestApplication.class)
+@SpringBootTest
 @Sql(executionPhase= Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "classpath:data.sql", config = @SqlConfig(encoding = "UTF-8"))
 class EmployeeServiceTest {
 
