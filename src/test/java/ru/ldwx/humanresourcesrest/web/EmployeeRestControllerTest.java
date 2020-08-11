@@ -84,15 +84,9 @@ class EmployeeRestControllerTest {
     @Test
     public void createEmployee() throws Exception {
         String employeeToAdd = gson.toJson(EMPLOYEE_7);
-        Employee expectedEmployee = new Employee(100, EMPLOYEE_7.getFullName() , EMPLOYEE_7.getDateOfBirth(), EMPLOYEE_7.getSalary(), EMPLOYEE_7.getDepartment());
-        String employees = gson.toJson(List.of(EMPLOYEE_1, EMPLOYEE_2, EMPLOYEE_3, EMPLOYEE_4, EMPLOYEE_5, EMPLOYEE_6, expectedEmployee));
         this.mockMvc.perform(post(REST_URL).contentType(MediaType.APPLICATION_JSON).content(employeeToAdd))
                 .andDo(print())
                 .andExpect(status().isOk());
-        this.mockMvc.perform(get(REST_URL))
-                .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().string(employees));
     }
 
     @Test
