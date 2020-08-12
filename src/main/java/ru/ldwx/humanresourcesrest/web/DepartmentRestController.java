@@ -37,12 +37,12 @@ public class DepartmentRestController {
         service.delete(id);
     }
 
-    @GetMapping(value = REST_URL)
+    @GetMapping(value = REST_URL, produces = "application/json; charset=utf-8")
     public List<Department> getAll() {
         return service.getAll();
     }
 
-    @GetMapping(value = REST_URL + "/{name}")
+    @GetMapping(value = REST_URL + "/{name}", produces = "application/json; charset=utf-8")
     public Department get(@PathVariable("name") String name) {
         return service.get(name);
     }
