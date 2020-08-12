@@ -22,5 +22,4 @@ class HumanResourcesRestApplicationTests {
 		assertThat(employeeRestController).isNotNull();
 		assertThat(departmentRestController).isNotNull();
 	}
-
 }
